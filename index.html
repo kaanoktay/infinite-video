@@ -652,7 +652,7 @@
                     Abstract
                 </h3>
                     <p style="font-size: 1.05rem; line-height: 1.6; color: #000000; text-align: justify; text-indent: 2em;">
-                        Diffusion Transformer has shown remarkable abilities in generating high-fidelity videos, delivering visually coherent frames and rich details over extended durations. However, existing video generation models still fall short in subject-consistent video generation due to an inherent difficulty in parsing prompts that specify complex spatial relationships, temporal logic, and interactions among multiple subjects. To address this issue, we propose BindWeave, a unified framework that handles a broad range of subject-to-video scenarios from single-subject cases to complex multi-subject scenes with heterogeneous entities. To bind complex prompt semantics to concrete visual subjects, we introduce an MLLM-DiT framework in which a pretrained multimodal large language model performs deep cross-modal reasoning to ground entities and disentangle roles, attributes, and interactions, yielding subject-aware hidden states that condition the diffusion transformer for high-fidelity subject-consistent video generation. Experiments on the OpenS2V benchmark demonstrate that our method achieves superior performance across subject consistency, naturalness, and text relevance in generated videos, outperforming existing open-source and commercial models.
+                        Autoregressive video diffusion models remain constrained by four fundamental bottlenecks: the finite temporal horizon imposed by the base model’s temporal RoPE, unbounded KV cache growth, the lack of fine-grained action controllability typical of world models, and the absence of cinematic multi-cut dynamics. We introduce \textit{Block-Relativistic RoPE}, \textit{KV Flush}, and a \textit{Space–Time Cut} mechanism to jointly overcome these challenges. \textit{Block-Relativistic RoPE} reformulates temporal encoding as a moving frame of reference, where each newly generated block is rotated relative to the teacher’s maximum frame horizon while earlier frames are rotated backward to preserve relative temporal geometry. In this relativistic formulation, frame positions are no longer static or bounded by cache size, they dynamically evolve across time, enabling continuous generation far beyond the positional limits of the base model. To enable fine-grained, action-controllable long-form generation, we introduce \textit{KV Flush}, which exploits the bidirectional temporal reach of Block-Relativistic RoPE to flush the entire cache, retain the first generated latent frame as the sink and the last generated  latent frame as the context, and resume generation from past temporal index, achieving infinite-horizon controllability without any additional latency. To transcend single-shot generation and inject cinematic diversity, \textit{Space–Time Cut} performs discontinuous jumps in temporal RoPE coordinates, realizing multi-cut dynamic scene transitions within a single continuous rollout. Together, these innovations enable fully controllable, infinite-length video generation using only $0.2\times$ of the KV cache memory required by previous methods, establishing a new foundation for scalable, scene-aware autoregressive video diffusion.
                     </p>
         </div>
     </section>
@@ -1102,18 +1102,27 @@
 
 
 <!-- ================= BibTeX Section with Copy Button ================= -->
-    <div class="container">
-<h2 class="title is-3 force-center-text">BibTeX</h2>
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 10%;">
+        <div style="
+            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 12px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(2px);
+        ">
+            <h2 class="title is-3 force-center-text" style="margin: 0 0 20px;">BibTeX</h2>
 
-        <div class="bibtex-container">
-            <button id="copy-bibtex-btn" class="copy-btn">Copy</button>
-            <div class="bibtex-box">
-                <pre><code id="bibtex-code">@article{li2025bindweave,
+            <div class="bibtex-container">
+                <button id="copy-bibtex-btn" class="copy-btn">Copy</button>
+                <div class="bibtex-box">
+                    <pre><code id="bibtex-code">@article{li2025bindweave,
   title={BindWeave: Subject-Consistent Video Generation via Cross-Modal Integration},
   author={Li, Zhaoyang and Qian, Dongjun and Su, Kai and Diao, Qishuai and Xia, Xiangyang and Liu, Chang and Yang, Wenfei and Zhang, Tianzhu and Yuan, Zehuan},
   journal={arXiv preprint arXiv:2510.00438},
   year={2025}
 }</code></pre>
+                </div>
             </div>
         </div>
     </div>
