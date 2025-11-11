@@ -19,8 +19,9 @@
  outline: none;
  border-radius: 10px;
  
- background-color: #3e3e40;
- color: white !important;
+ background-color: #ffffff;
+ color: #000000 !important;
+ border: 1px solid #000000;
  font-size: 16px;
  width: 200px;
  font-weight: 350;
@@ -31,7 +32,8 @@
    margin: 16px 0px;
 }
 .paper-btn:hover {
-   opacity: 0.80;
+   background-color: #000000;
+   color: #ffffff !important;
 }
 
 .video {
@@ -58,12 +60,12 @@
 }
 
 div.scroll-container {
- background-color: #3e3e40;
- overflow: auto;
- white-space: nowrap;
- margin-top: 25px;
- margin-bottom: 25px;
- padding: 7px 7.5px 2.5px 9px;
+  background-color: #ffffff;
+  overflow: auto;
+  white-space: nowrap;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 7px 7.5px 2.5px 9px;
 }
 
 .youtube-container {
@@ -137,19 +139,19 @@ div.scroll-container {
 }
 
 .custom-button {
-  color: white !important;
+  color: #000000 !important;
   text-decoration: none !important;
-  background-color: #2f2f30;
+  background-color: #ffffff;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  border: none;
+  border: 1px solid #000000;
   cursor: pointer;
-  opacity: 0.7; /* Initial opacity */
-  transition: opacity 0.3s ease; /* Smooth transition */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
 }
 .custom-button:hover {
-  opacity: 1.0; /* Increased opacity on hover */
+  background-color: #000000;
+  color: #ffffff !important;
 }
 
 .block-container {
@@ -175,7 +177,7 @@ div.scroll-container {
     align-items: center; /* 垂直居中 */
     text-align: center;
     overflow: hidden; /* 确保视频不会溢出边界 */
-    color: #ffffff; /* 默认文字颜色为白色 */
+    color: #000000; /* 默认文字颜色为黑色 */
 }
 
 /* 2. 视频层 (#background-video) 作为背景 */
@@ -195,7 +197,7 @@ div.scroll-container {
     z-index: 2; /* 关键：将内容放在图层 2，确保在视频之上 */
     
     /* (可选) 添加一个半透明背景和内边距，形成一个漂亮的“卡片”效果 */
-    background: rgba(0, 0, 0, 0.5); /* 50% 透明度的黑色背景，增强文字可读性 */
+    background: rgba(255, 255, 255, 0.85); /* 亮色背景，增强文字可读性 */
     padding: 30px 50px; /* 卡片内部的留白 */
     border-radius: 15px; /* 卡片的圆角 */
     max-width: 80%; /* 限制卡片最大宽度，防止在宽屏上过长 */
@@ -218,9 +220,9 @@ div.scroll-container {
 
 .bibtex-box {
     /* The key change is here! */
-    background-color: rgba(147, 145, 145, 0.97); /* 10% opaque white */
+    background-color: rgba(255, 255, 255, 0.97); /* 高亮白色背景 */
 
-    border: 1px solid #555; /* Changed border to a slightly lighter gray for better contrast on black */
+    border: 1px solid #000000; /* 黑色边框 */
     border-radius: 5px;
     padding: 20px;
     font-family: 'Courier New', Courier, monospace;
@@ -228,6 +230,7 @@ div.scroll-container {
     word-break: break-all;
     font-size: 14px;
     padding-top: 45px; 
+    color: #000000;
 }
 
 
@@ -244,8 +247,8 @@ div.scroll-container {
     right: 10px;
     padding: 5px 10px;
     font-size: 12px;
-    background-color: #007bff;
-    color: white;
+    background-color: #000000;
+    color: #ffffff;
     border: none;
     border-radius: 3px;
     cursor: pointer;
@@ -253,7 +256,8 @@ div.scroll-container {
 }
 
 .copy-btn:hover {
-    background-color: #0056b3;
+    background-color: #000000;
+    opacity: 0.85;
 }
 
 @keyframes shine {
@@ -267,13 +271,13 @@ div.scroll-container {
 
 
 .title-art strong {
-  color: #fff; /* 文字本身是白色 */
-  
-  /* 只设置 text-shadow，不使用 animation */
+  color: #000000; /* 使用黑色文字 */
+
+  /* 使用黑色阴影增强层次 */
   text-shadow: 
-    0 0 8px rgba(255, 255, 255, 1),   /* 最内层，最亮的白色光 */
-    0 0 16px rgba(255, 255, 255, 0.8), /* 中间层，扩散的白光 */
-    0 0 32px rgba(255, 105, 180, 0.6); /* 最外层，柔和的粉色光晕 */
+    0 0 8px rgba(0, 0, 0, 0.4),
+    0 0 16px rgba(0, 0, 0, 0.2),
+    0 0 32px rgba(0, 0, 0, 0.1);
 }
 
 

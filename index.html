@@ -4,7 +4,7 @@
     <meta name="description" content="BindWeave: Subject-Consistent Video Generation via Cross-Modal Integration">
     <meta name="keywords" content="Video generation, Diffusion model">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#EDE8F5">
+    <meta name="theme-color" content="#FFFFFF">
     <meta property="og:image" content="">
     <link rel="stylesheet" href="./assets/index.css">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.2/css/bootstrap.min.css'>
@@ -40,18 +40,18 @@
         }
 
         video {
-            background-color: #000000;
+            background-color: #ffffff;
             aspect-ratio: 16 / 9;
         }
 
         section.portrait video {
-            background-color: #000000;
+            background-color: #ffffff;
             aspect-ratio: 16 / 9;
             object-fit: cover;
         }
 
         section.multi_ip video {
-            background-color: #000000;
+            background-color: #ffffff;
             aspect-ratio: 4 / 3;
             object-fit: cover;
         }
@@ -120,7 +120,7 @@
             transform: translateX(-50%); /* Offset by 50% of its width to truly center */
             max-width: 80%;
             text-align: center;  /* Center the text inside the prompt */
-            color: white;        /* Optional, if you want the text to stand out */
+            color: black;        /* Optional, if you want the text to stand out */
             font-size: 1.2em;    /* Optional, adjust the text size */
         }
 
@@ -131,7 +131,7 @@
             transform: translateX(-50%); /* Offset by 50% of its width to truly center */
             max-width: 80%;
             text-align: center;  /* Center the text inside the prompt */
-            color: white;        /* Optional, if you want the text to stand out */
+            color: black;        /* Optional, if you want the text to stand out */
             font-size: 1.2em;    /* Optional, adjust the text size */
         }
 
@@ -150,7 +150,8 @@
             /* background-image: url('./assets/background.png'); */
             background-size: cover; /* Cover the entire container */
             background-position: center; /* Center the background image */
-            color: #ffffff; /* Ensure text color is readable */
+            background-color: #ffffff;
+            color: #000000; /* Ensure text color is readable */
         }
 
         #intro h1 {
@@ -162,17 +163,17 @@
         #intro h2 {
             margin: 20px 0 40px 0;
             font-weight: 300;
-            color: #ffffff
+            color: #000000;
         }
 
         #intro h2 strong {
-            color: #fff;
+            color: #000000;
         }
 
         .authors {
             font-size: 16px;
             font-weight: 500;
-            color: #ffffff;
+            color: #000000;
             text-align: center;
             margin-bottom: 25px;
             width: 80%;
@@ -186,18 +187,18 @@
         }
 
         .author-block a {
-            color: #ffffff;
+            color: #000000;
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .author-block a:hover {
-            color: #fff;
+            color: #000000;
         }
 
         .author-affiliation {
             font-size: 16px;
-            color: #ffffff;
+            color: #000000;
             text-align: center;
             margin-bottom: 60px;
             width: 80%;
@@ -220,8 +221,8 @@
         }
 
         .button {
-            background-color: #ccc;
-            color: #000;
+            background-color: #ffffff;
+            color: #000000;
             padding: 10px 20px;
             border-radius: 100px;
             cursor: pointer;
@@ -230,30 +231,32 @@
             margin-right: 8px;
             margin-bottom: 8px;
             display: inline-block;
+            border: 1px solid #000000;
         }
 
         .button:hover {
-            background-color: #fff;
+            background-color: #000000;
+            color: #ffffff;
         }
 
         .bibtex-section {
-            background-color: #111;
+            background-color: #ffffff;
             padding: 40px 10%;
             text-align: center;
             margin-top: 60px;
-            color: #ccc;
+            color: #000000;
         }
 
         .bibtex-section h3 {
             font-size: 24px;
             font-weight: 400;
-            color: #ccc;
+            color: #000000;
             margin-bottom: 20px;
         }
 
         .bibtex-code {
-            background-color: #222;
-            color: #ddd;
+            background-color: #ffffff;
+            color: #000000;
             padding: 20px;
             border-radius: 10px;
             text-align: left;
@@ -261,6 +264,7 @@
             font-family: monospace;
             max-width: 800px;
             overflow-x: auto;
+            border: 1px solid #000000;
         }
 
         section {
@@ -271,7 +275,7 @@
         }
 
         .title {
-            background-color: #000;
+            background-color: #ffffff;
             position: sticky;
             top: 0;
             padding: 20px 10%;
@@ -280,17 +284,19 @@
             z-index: 1000;
             min-height: 60px;
             box-sizing: border-box;
+            border-bottom: 1px solid #000000;
+            color: #000000;
         }
 
         .description {
             padding: 0 10% 20px 10%;
-            color: #999;
+            color: #000000;
             line-height: 25px;
             font-weight: 300;
         }
 
         .highlight {
-            color: #fff;
+            color: #000000;
             font-weight: 500;
         }
 
@@ -352,8 +358,8 @@
             align-items: center;
             justify-content: center;
             font-size: 48px;
-            color: rgba(255, 255, 255, 0.6);
-            background: rgba(0, 0, 0, 0.5);
+            color: rgba(0, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0.75);
         }
 
         .loading-text {
@@ -368,8 +374,8 @@
         .prompt {
             max-width: calc(100% - 20px);
             position: absolute;
-            background: rgba(0,0,0,0.5);
-            color: rgba(255,255,255,0.9);
+            background: rgba(255,255,255,0.85);
+            color: rgba(0,0,0,0.85);
             font-size: 10px;
             backdrop-filter: blur(10px);
             bottom: 10px;
@@ -393,7 +399,7 @@
         .chinese {
             font-family: 'Noto Sans SC', sans-serif;
             font-weight: bold;
-            color: #d18585;
+            color: #000000;
             font-size: 1.1em;
         }
 
@@ -404,7 +410,8 @@
                 pointer-events: all;
             }
             #contributors a:hover {
-                background-color: #222;
+                background-color: #000000;
+                color: #ffffff;
             }
         }
 
@@ -470,8 +477,8 @@
             position: sticky;
             top: 60px;
             z-index: 999;
-            background-color: #000;
-            color: #999;
+            background-color: #ffffff;
+            color: #000000;
             padding: 5px 0;
         }
 
@@ -481,7 +488,7 @@
         }
 
         .selected {
-            box-shadow: 0 0 0 5px #fff;
+            box-shadow: 0 0 0 5px #000000;
         }
 
         #title-container {
@@ -511,7 +518,7 @@
 
         h2 {
             font-size: 2.5em;
-            color: rgb(255, 255, 255);
+            color: #000000;
             text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
 
@@ -520,14 +527,14 @@
           max-width: 720px;
           padding-bottom: 40%; 
           margin: 0 auto;
-          background: #000000;
+          background: #ffffff;
         }
 
         .ethics-section {
             padding: 100px 10%;
             text-align: center;
             margin-top: 60px;
-            color: #ccc;
+            color: #000000;
             max-width: 1500px;
             margin: 0 auto;
         }
@@ -536,7 +543,7 @@
             padding: 100px 10%;
             text-align: center;
             margin-top: 60px;
-            color: #ccc;
+            color: #000000;
             max-width: 1500px;
             margin: 0 auto;
         }
@@ -625,17 +632,17 @@
     </div> -->
     <section class="acknowledgements-section" style="max-width: 1200px; margin: 0 auto;">
         <div style="
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(0, 0, 0, 0.15);
             border-radius: 12px;
             padding: 30px;
-            background-color: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(4px);
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(2px);
         ">
-                <h3 style="text-align: center; font-weight: bold; font-size: 1.8rem; margin-bottom: 1rem; color: white;">
+                <h3 style="text-align: center; font-weight: bold; font-size: 1.8rem; margin-bottom: 1rem; color: #000000;">
                     Abstract
                 </h3>
-                    <p style="font-size: 1.05rem; line-height: 1.6; color: white; text-align: left; text-indent: 2em;"></p>
+                    <p style="font-size: 1.05rem; line-height: 1.6; color: #000000; text-align: left; text-indent: 2em;"></p>
                        Diffusion Transformer has shown remarkable abilities in generating high-fidelity videos, delivering visually coherent frames and rich details over extended durations.
 However, existing video generation models still fall short in subject-consistent video generation due to an inherent difficulty in parsing prompts that specify complex spatial relationships, temporal logic, and interactions among multiple subjects. To address this issue, we propose BindWeave, a unified framework that handles a broad range of subject-to-video scenarios from single-subject cases to complex multi-subject scenes with heterogeneous entities. 
 To bind complex prompt semantics to concrete visual subjects, we introduce an MLLM-DiT framework in which a pretrained multimodal large language model performs deep cross-modal reasoning to ground entities and disentangle roles, attributes, and interactions, yielding subject-aware hidden states that condition the diffusion transformer for high-fidelity subject-consistent video generation.
