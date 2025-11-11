@@ -274,19 +274,21 @@
             margin-top: 0;
         }
 
-        .title {
-            background-color: #ffffff;
-            position: sticky;
-            top: 0;
-            padding: 20px 10%;
-            font-size: 20px;
-            font-weight: 600;
-            z-index: 1000;
-            min-height: 60px;
-            box-sizing: border-box;
-            border-bottom: 1px solid #000000;
-            color: #000000;
-        }
+        div.title {
+             position: sticky;
+             top: 0;
+             padding: 20px 10%;
+             font-size: 20px;
+             font-weight: 700;
+             z-index: 1000;
+             min-height: 60px;
+             box-sizing: border-box;
+             background-color: #ffffff;
+             border-top: 1px solid #000000;
+             border-bottom: 1px solid #000000;
+             color: #000000 !important;
+             text-align: center;
+         }
 
         .description {
             padding: 0 10% 20px 10%;
@@ -547,6 +549,17 @@
             max-width: 1500px;
             margin: 0 auto;
         }
+
+        .container .title.is-3 {
+             position: static;
+             padding: 0;
+             margin: 60px 0 20px;
+             border: none;
+             background: none;
+             color: #000000;
+             font-weight: 700;
+             text-align: center;
+         }
 
     </style>
 </head>
