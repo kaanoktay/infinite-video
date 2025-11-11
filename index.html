@@ -1,8 +1,8 @@
 <html lang="en">
   <head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-    <title>Phantom</title>
-    <meta name="description" content="Subject-Consistent Video Generation via Cross-Modal Alignment">
-    <meta name="keywords" content="Video generation, Diffusion model, Subject-consistent">
+    <title>BindWeave</title>
+    <meta name="description" content="BindWeave: Subject-Consistent Video Generation via Cross-Modal Integration">
+    <meta name="keywords" content="Video generation, Diffusion model">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#EDE8F5">
     <meta property="og:image" content="">
@@ -147,7 +147,7 @@
             padding: 100px 0 80px 0;
             justify-content: center; /* Center content vertically */
             text-align: center; /* Center text alignment */
-            background-image: url('./assets/background.png');
+            /* background-image: url('./assets/background.png'); */
             background-size: cover; /* Cover the entire container */
             background-position: center; /* Center the background image */
             color: #ffffff; /* Ensure text color is readable */
@@ -544,137 +544,149 @@
     </style>
 </head>
 <body>
+    <!-- ========= 替换你原来的整个 intro section ========= -->
+<!-- ========= 替换你原来的整个 intro section (修正版) ========= -->
+
     <section id="intro">
-        <div class="content">
+
+        <!-- 背景视频层 -->
+        <video autoplay loop muted playsinline id="background-video">
+            <source src="background_video.mp4" type="video/mp4">
+        </video>
+
+        <!-- 内容层 (移除了多余的 .content 嵌套) -->
+        <div class="intro-content">
             <div id="title-container">
-              <img id="title-icon" src="./assets/icon-new.png" alt="Icon">
-              <h1 class="title-art"><strong>Phantom</strong></h1>
+                <!-- <img id="title-icon" src="./assets/icon-new.png" alt="Icon"> -->
+                <h1 class="title-art"><strong>BindWeave</strong></h1>
             </div>
-            <h2 class="title-art2">Subject-Consistent Video Generation via Cross-Modal Alignment</h2>
-
+            <h2 class="title-art2">Subject-Consistent Video Generation via Cross-Modal Integration</h2>
             <div class="authors">
-                <span class="author-block"><a href="https://liulj13.github.io/">Lijie Liu</a><sup>*</sup></span>
-                <span class="author-block"><a href="https://tianxiangma.github.io/">Tianxiang Ma</a><sup>*</sup></span>
-                <span class="author-block"><a href="https://scholar.google.com/citations?user=ac5Se6QAAAAJ">Bingchuan Li</a><sup>* &dagger;</sup></span>
-                <span class="author-block"><a href="https://scholar.google.com/citations?user=ow1jGJkAAAAJ">Zhuowei Chen</a><sup>*</sup></span>
-                <span class="author-block"><a href="https://scholar.google.com/citations?user=X21Fz-EAAAAJ">Jiawei Liu</a></span>
-                <span class="author-block"><a href="https://scholar.google.com/citations?user=9rWWCgUAAAAJ">Qian He</a></span>
-                <span class="author-block">Xinglong Wu</a></span>
+                <div class="author-block"><a href="https://scholar.google.com/citations?user=WelDcqkAAAAJ&hl=zh-CN">Zhaoyang Li</a><sup>1,2</sup></div>
+                <div class="author-block"><a href="https://openreview.net/profile?id=~Dongjun_Qian1">Dongjun Qian</a><sup>2</sup></div>
+                <div class="author-block"><a href="https://scholar.google.com/citations?user=Kp3XAToAAAAJ&hl=zh-CN">Kai Su</a><sup>2*</sup></div>
+                <div class="author-block"><a href="https://scholar.google.com/citations?user=G6xrfhYAAAAJ&hl=zh-CN">Qishuai Diao</a><sup>2</sup></div>
+                <div class="author-block"><a href="https://openreview.net/profile?id=~Xiangyang_Xia1">Xiangyang Xia</a><sup>2</sup></div>
+                <div class="author-block"><a href="https://openreview.net/profile?id=~Chang_Liu71">Chang Liu</a><sup>2</sup></div>
+                <div class="author-block"><a href="https://scholar.google.com/citations?user=rtO5VmQAAAAJ&hl=zh-CN">Wenfei Yang</a><sup>1</sup></div>
+                <div class="author-block"><a href="https://scholar.google.com/citations?user=9sCGe-gAAAAJ&hl=en">Tianzhu Zhang</a><sup>1*</sup></div>
+                <div class="author-block"><a href="https://shallowyuan.github.io/">Zehuan Yuan</a><sup>2</sup></div>
             </div>
-
-            <!-- Added the affiliations section -->
+            <div class="author-affiliation" style="font-style: italic;">* Corresponding Author</div>
             <div class="author-affiliation">
-                <p><span><sup>*</sup>Equal contribution,<sup> &dagger;</sup>Project lead</span></p>
-                <p><span>Intelligent Creation Team, ByteDance</span></p>
+                <div class="author-block"><sup>1</sup>University of Science and Technology of China</div>
+                <div class="author-block"><sup>2</sup>ByteDance</div>
             </div>
-
-            <a class="button" href="https://arxiv.org/abs/2502.11079" target="_blank" rel="noopener noreferrer">
-                Research Paper
+            <a class="button" href="https://arxiv.org/pdf/2510.00438" target="_blank" rel="noopener noreferrer">
+                Paper
             </a>
-            <a class="button" href="https://github.com/Phantom-video/Phantom" target="_blank" rel="noopener noreferrer">
+            <a class="button" href="https://github.com/bytedance/BindWeave" target="_blank" rel="noopener noreferrer">
                 <i class="fa fa-github" style="font-size:17px"></i>
-                GitHub
+                Code
             </a>
-            
         </div>
 
     </section>
 
-    <div class="container text-center" style="margin-top: 50px; text-align: center;">
-      <p class="title-art3" style="font-size: 1.6em;"> Episodes Created from Phantom-generated Videos</p>
-      <p class="description" style="font-size: 1.0em;"> Turn on the sound for a better viewing experience</p>
+
+
+
+    <!-- 文本标题 -->
+    <!-- <div class="container text-center" style="margin-top: 50px;">
+    <p class="title-art3" style="font-size: 1.6em;">Episodes Created from MAGREF-generated Videos</p>
+    <p class="description" style="font-size: 1.0em;">Turn on the sound for a better viewing experience</p> -->
+    <!-- </div> -->
+    <!-- 视频主体
+    <div class="show-neighbors" style="display: flex; justify-content: center; flex-direction: column; margin-top: 30px; margin-bottom: 40px;">
+    <div style="display: flex; justify-content: center;">
+        <div style="
+        border: 4px solid #ffffff44;
+        border-radius: 2vmin;
+        padding: 8px;
+        background: #1c1c1c;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        ">
+        <video
+            src="./assets/magref_video/demo/magref_demo.mp4"
+            playsinline
+            controls
+            style="
+            width: 90vw;
+            max-width: 1000px;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+            border-radius: 2vmin;
+            background: black;
+            display: block;
+            "
+        ></video>
+        </div>
     </div>
+    </div> -->
+    <section class="acknowledgements-section" style="max-width: 1200px; margin: 0 auto;">
+        <div style="
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(4px);
+        ">
+                <h3 style="text-align: center; font-weight: bold; font-size: 1.8rem; margin-bottom: 1rem; color: white;">
+                    Abstract
+                </h3>
+                    <p style="font-size: 1.05rem; line-height: 1.6; color: white; text-align: left; text-indent: 2em;"></p>
+                       Diffusion Transformer has shown remarkable abilities in generating high-fidelity videos, delivering visually coherent frames and rich details over extended durations.
+However, existing video generation models still fall short in subject-consistent video generation due to an inherent difficulty in parsing prompts that specify complex spatial relationships, temporal logic, and interactions among multiple subjects. To address this issue, we propose BindWeave, a unified framework that handles a broad range of subject-to-video scenarios from single-subject cases to complex multi-subject scenes with heterogeneous entities. 
+To bind complex prompt semantics to concrete visual subjects, we introduce an MLLM-DiT framework in which a pretrained multimodal large language model performs deep cross-modal reasoning to ground entities and disentangle roles, attributes, and interactions, yielding subject-aware hidden states that condition the diffusion transformer for high-fidelity subject-consistent video generation.
+Experiments on the OpenS2V benchmark demonstrate that our method achieves superior performance across subject consistency, naturalness, and text relevance in generated videos, outperforming existing open-source and commercial models.
+                    </p>
+        </div>
+    </section>
+
+
     
-
-    <div id="carouselExampleCaptions" class="carousel slide show-neighbors" data-ride="carousel" data-interval="false">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="item__third">
-            <div id="video-wrapper" style="position: relative; width: 100%; height: 0;">
-              <video class="carousel-video" src="./assets/videos/demo/demo1.mp4" playsinline controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 2vmin; background: #2f2f30;"></video>
-            </div>
-            <div id="text-prompt-set-1" class="responsive-text-prompt" style="font-family: Chalkduster; font-size: 14px; color: white; margin-top:10px; margin-bottom:10px;">
-                The Phantom of the Opera
-            </div>
-          </div>
-        </div>
-        
-        <div class="carousel-item">
-          <div class="item__third">
-            <div id="video-wrapper" style="position: relative; width: 100%; height: 0;">
-              <video class="carousel-video" src="./assets/videos/demo/demo2.mp4" playsinline controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 2vmin; background: #2f2f30;"></video>
-            </div>
-            <div id="text-prompt-set-2" class="responsive-text-prompt" style="font-family: Chalkduster; font-size: 14px; color: white; margin-top:10px; margin-bottom:10px;">
-                The New Annabelle
-            </div>
-          </div>
-        </div>
-        
-        <div class="carousel-item">
-          <div class="item__third">
-            <div id="video-wrapper" style="position: relative; width: 100%; height: 0;">
-              <video class="carousel-video" src="./assets/videos/demo/demo3.mp4" playsinline controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 2vmin; background: #2f2f30;"></video>
-            </div>
-            <div id="text-prompt-set-3" class="responsive-text-prompt" style="font-family: Chalkduster; font-size: 14px; color: white; margin-top:10px; margin-bottom:10px;">
-                Ne Zha
-            </div>
-          </div>
-        </div>
-        
-      </div>
-
-      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true" style="background-image: url('./assets/arrow-right.svg'); width: 50px; height: 50px; transform: rotate(180deg);"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true" style="background-image: url('./assets/arrow-right.svg'); width: 50px; height: 50px;"></span>
-        <span class="sr-only">Next</span>
-      </a>
-
-    </div>
 
 
     <section id="video">
-        <div class="title" style="font-family: 'Alegreya'; font-size: 1.6em;">
-          Identity Preserving Video Generation
+        <div class="title" style="font-family: 'Georgia'; font-size: 1.6em;">
+          Single-human-to-video
         </div>
         <div class="description">
-            Subject-to-video generation using a facial reference image. <em><strong>Phantom</strong></em> strictly preserves the identity of the reference face while generating vivid videos that follow the provided prompt.
+         Given a single reference photo of the human (face or body), <strong>BindWeave</strong> generates identity-consistent, prompt-guided videos with natural variations in pose, expression, and viewpoint.
         </div>
-        
         <div class="flex flex-dynamic">
             <div class="prompt-wrap full-screen-wrap" style="position: relative;">
                 <div class="loading-placeholder">
                     <div class="loading-text">Loading...</div>
                     <div class="loading-icon">&#9749</div>
                 </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/id/0_ref.mov"></video>
-                <div class="prompt">A man wearing black sunglasses and a dark brown long windbreaker turns his back to the camera. The wind blows the hem of his clothes, creating a dynamic movement. The camera focuses on his weathered profile, capturing the lines and textures of his face. He stands on a modern city street in Ma Long, which is bustling with traffic and tall skyscrapers.</div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/singleface_1.mp4"></video>
+                <div class="prompt">The video features a young man standing outdoors in a snowy park. he is wearing a colorful winter jacket with a floral pattern and a white knit hat. The background shows a snowy landscape with trees, benches, and a metal fence. The ground is covered in snow, and there is a light snowfall in the air. The man appears to be enjoying the winter weather, as he smiles and gives a thumbs-up gesture towards the camera. The overall atmosphere of the video is cheerful and festive, capturing the beauty of a snowy day in a park.</div>
             </div>
             <div class="prompt-wrap full-screen-wrap" style="position: relative;">
                 <div class="loading-placeholder">
                     <div class="loading-text">Loading...</div>
                     <div class="loading-icon">&#9749</div>
                 </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/id/1_ref.mov"></video>
-                <div class="prompt">A young boy with tousled brown hair is crouching by a stream in a dense forest. He is dressed in casual clothing, with a blue hoodie and khaki pants, and his shoes are slightly muddy. The background shows the dappled light filtering through the tall trees and a carpet of fallen leaves. He faces the side, reaching out to touch the water, creating small ripples, and looks up with a curious expression.</div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/singleface_5.mp4"></video>
+                <div class="prompt">The video features a man sitting at a desk in front of a large screen displaying an American flag. he is wearing a plaid shirt and appears to be delivering a news report or commentary. The background behind his consists of a large screen with the American flag displayed prominently. The man is speaking, gesturing with his hands as he talks. The setting suggests that this is a newsroom or studio environment where news broadcasts or reports are produced. The American flag on the screen behind his indicates that the content may be related to news stories involving the United States. The man's attire and the professional setup suggest that he is likely a news anchor or reporter. Overall, the video captures a moment in a news broadcast where the man is providing information or commentary, with the American flag serving as a visual backdrop.</div>
             </div>
             <div class="prompt-wrap full-screen-wrap" style="position: relative;">
                 <div class="loading-placeholder">
                     <div class="loading-text">Loading...</div>
                     <div class="loading-icon">&#9749</div>
                 </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/id/2_ref.mov"></video>
-                <div class="prompt">A little girl dressed in a green and yellow dinosaur costume with a tail and a big head is grinning and jumping enthusiastically on a soft, brown sofa. The living room is brightly lit with sunlight coming in through a nearby window, casting a warm glow on the scene. The walls are painted a light blue, and there are books and toys scattered around. The girl's arms are flailing as she bounces, and her dinosaur ears are flopping with each jump.</div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/singleface_7.mp4"></video>
+                <div class="prompt">The video features a young man who appears to be a content creator or streamer. he is wearing a green sleeveless top and red headphones. The background is illuminated with vibrant neon lights, predominantly in shades of purple and blue, creating a lively and energetic atmosphere. The man is seated in front of a microphone, suggesting he is recording a podcast, streaming a live broadcast, or engaging in some form of online communication. The setting appears to be a well-lit room with a curtain and a lamp visible in the background, adding to the cozy and inviting ambiance. The man's expression and body language indicate he is actively speaking or singing into the microphone, possibly sharing his thoughts, stories, or performing music. The overall scene conveys a sense of engagement and interaction, likely aimed at an audience who is tuned in to his content.</div>
             </div>
             <div class="prompt-wrap full-screen-wrap" style="position: relative;">
                 <div class="loading-placeholder">
                     <div class="loading-text">Loading...</div>
                     <div class="loading-icon">&#9749</div>
                 </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/id/9_ref.mov"></video>
-                <div class="prompt">A woman dressed in elegant court attire, a flowing gown, a pearl necklace, and a delicate ivory fan in her gloved hands. She fanned herself slowly, her movements graceful and deliberate. The background was a grand European castle hall, with a huge domed ceiling, smooth marble floors, and exquisite tables, chairs, and candlesticks, emitting soft and warm lighting.</div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/singleface_15.mp4"></video>
+                <div class="prompt">The video features a man with dark-haired hair, wearing a blue tank top and holding a pink tank top on a hanger. he appears to be in a clothing store or a similar retail environment, as there are racks of clothes visible in the background. The man is speaking to the camera, possibly providing a review or discussing the tank top he is holding. he has colorful bracelets on his wrist and is wearing a necklace with multiple beads. his expression suggests he is engaged in a conversation or presentation. The setting seems to be indoors, with artificial lighting illuminating the scene.</div>
             </div>
             
             <div class="prompt-wrap full-screen-wrap" style="position: relative;">
@@ -682,51 +694,82 @@
                     <div class="loading-text">Loading...</div>
                     <div class="loading-icon">&#9749</div>
                 </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/id/4_ref.mov"></video>
-                <div class="prompt">A man in a sharp black suit, paired with a crisp white shirt and a dark tie, is walking down a busy city street. He holds a steaming cup of coffee in one hand, taking occasional sips as he goes. The street is lined with tall buildings and bustling with people. Sunlight filters through the tall windows of nearby skyscrapers, casting a warm glow on the pavement.</div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/singleface_17.mp4"></video>
+                <div class="prompt">The video features a young woman with long blonde hair standing in front of a lush, green bush adorned with white flowers. She is wearing a black top and appears to be enjoying the natural surroundings. The woman is seen smiling and looking at the camera while gently touching the flowers on the bush. She then bends down slightly and smells one of the flowers, taking in its fragrance. The scene is serene and peaceful, with the woman appearing content and at ease in the beautiful environment. The background consists of more greenery and additional white flowers, creating a picturesque setting. The woman's interaction with the flowers suggests a connection to nature and an appreciation for its beauty. Overall, the video captures a moment of tranquility and natural beauty, with the woman as the central figure.</div>
             </div>
             <div class="prompt-wrap full-screen-wrap" style="position: relative;">
                 <div class="loading-placeholder">
                     <div class="loading-text">Loading...</div>
                     <div class="loading-icon">&#9749</div>
                 </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/id/5_ref.mov"></video>
-                <div class="prompt">An older gentleman with a beard and salt-and-pepper hair is mountain biking on a rugged trail. He wears a green, moisture-wicking jersey and padded shorts. The challenging terrain features steep inclines and rocky paths, set against the backdrop of a stunning mountain range. His eyes are locked on the path ahead as he navigates the twists and turns with skill and enthusiasm, illustrating an adventurous and spirited moment.</div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/singlehuman_26.mp4"></video>
+                <div class="prompt">The video features a woman jogging along a trail beside a serene lake. She has short, curly hair and is wearing athletic wear and sneakers. The surrounding trees and the shimmering water create a peaceful atmosphere, while the woman maintains a steady pace, focusing on her exercise. The morning sunlight casts a soft glow on the scene, adding to the sense of calm.</div>
             </div>
             <div class="prompt-wrap full-screen-wrap" style="position: relative;">
                 <div class="loading-placeholder">
                     <div class="loading-text">Loading...</div>
                     <div class="loading-icon">&#9749</div>
                 </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/id/6_ref.mov"></video>
-                <div class="prompt">A young tenor with tousled, sandy-blonde hair sings passionately under a single spotlight in an ornate concert hall. He is clad in a sharp, charcoal-grey suit with a vibrant red tie that adds a pop of color. The scene is set against a backdrop of deep blue curtains with golden trim, and the audience is barely visible in the dim light, entranced by his powerful voice. His fervent expression and the way he clutches the microphone stand convey raw emotion and dedication.</div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/singleface_22.mp4"></video>
+                <div class="prompt">The video features a woman with blonde hair, wearing a blue tank top and holding a pink tank top on a hanger. She appears to be in a clothing store or a similar retail environment, as there are racks of clothes visible in the background. The woman is speaking to the camera, possibly providing a review or discussing the tank top she is holding. She has colorful bracelets on her wrist and is wearing a necklace with multiple beads. Her expression suggests she is engaged in a conversation or presentation. The setting seems to be indoors, with artificial lighting illuminating the scene.</div>
             </div>
             <div class="prompt-wrap full-screen-wrap" style="position: relative;">
                 <div class="loading-placeholder">
                     <div class="loading-text">Loading...</div>
                     <div class="loading-icon">&#9749</div>
                 </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/id/7_ref.mov"></video>
-                <div class="prompt">A tall, elegant woman with curly, auburn hair stands center stage in an opulent opera house. She is dressed in a flowing, emerald-green gown with intricate gold embroidery that glimmers under the stage lights. The background showcases velvety red curtains, ornate golden designs, and an audience that watches in rapt attention. She lifts her arms expressively, her face reflecting the emotion of the aria she sings, creating a powerful and captivating atmosphere.</div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/singleface_24.mp4"></video>
+                <div class="prompt">A woman wearing a colorful scarf and cozy sweater, her eyes sparkling with a hint of wonder as she looks around at the falling leaves. Her lips curl into a slight, content smile, adding a touch of warmth to the cool air. Golden and orange leaves cascade softly around her, with the trees forming a vibrant canopy overhead. The shot is captured from the waist up, showcasing her relaxed stance and the intricate patterns of her scarf as they complement the autumn backdrop.</div>
             </div>
             <div class="prompt-wrap full-screen-wrap" style="position: relative;">
                 <div class="loading-placeholder">
                     <div class="loading-text">Loading...</div>
                     <div class="loading-icon">&#9749</div>
                 </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/id/8_ref.mov"></video>
-                <div class="prompt">A refined cellist with sleek, chestnut hair sits center stage in an elegant orchestra pit. She wears a floor-length, cobalt blue dress that contrasts beautifully with the golden wood of her cello. The background is filled with crimson curtains, opulent antique decor, and fellow musicians absorbed in their instruments. Her bow hand moves with grace and precision, her head gently swaying with the melancholic melody, creating an atmosphere of profound and moving beauty.</div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/singleface_30.mp4"></video>
+                <div class="prompt">The video features a woman in exquisite hybrid armor adorned with iridescent gemstones, standing amidst gently falling cherry blossoms. Her piercing yet serene gaze hints at quiet determination, as a breeze catches a loose strand of her hair. She stands in a tranquil courtyard framed by moss-covered stone walls and wooden arches, with blossoms casting soft shadows on the ground. The petals swirl around her, adding a dreamlike quality, while the blurred backdrop emphasizes her poised figure. The scene conveys elegance, strength, and tranquil readiness, capturing a moment of peace before an upcoming challenge.</div>
             </div>
+            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                <div class="loading-placeholder">
+                    <div class="loading-text">Loading...</div>
+                    <div class="loading-icon">&#9749</div>
+                </div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/singlehuman_2.mp4"></video>
+                <div class="prompt">A man gently clutching a bouquet of vibrant flowers, his eyes radiating a serene contentment as he glances at the camera. His slightly upturned lips convey a sense of calm joy, accompanied by a faint twinkle in his eye. The scene is set in a lush garden, brimming with colorful blooms and verdant foliage, creating a tranquil haven. The shot captures him from the waist up, emphasizing his relaxed stance and the natural harmony of his surroundings.</div>
+            </div>
+
+            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                <div class="loading-placeholder">
+                    <div class="loading-text">Loading...</div>
+                    <div class="loading-icon">&#9749</div>
+                </div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/singlehuman_10.mp4"></video>
+                <div class="prompt">The video shows a man sitting on a park bench under a large oak tree, reading a book. He has a beard and is wearing a casual sweater and jeans. The park is quiet and green, with sunlight filtering through the tree branches. The man seems completely absorbed in his book, occasionally glancing up to enjoy the peaceful surroundings..</div>
+            </div>
+            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                <div class="loading-placeholder">
+                    <div class="loading-text">Loading...</div>
+                    <div class="loading-icon">&#9749</div>
+                </div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/singlehuman_30.mp4"></video>
+                <div class="prompt">In the video, a woman is sitting at a café terrace, enjoying a cup of tea. She is wearing a light blouse and has her hair pulled back into a bun. The table in front of her is set with a small plate of pastries, and she takes a slow sip from her cup, savoring the moment. The bustling city street in the background creates a lively but relaxed atmosphere, as people walk by and cars pass in the distance. </div>
+            </div>
+          
         </div>
     </section>
 
+
+
+
+
+
     <section id="video">
       <div class="title" style="font-family: 'Alegreya'; font-size: 1.6em;">
-        Single Reference Subject-to-Video Generation 
+        Multi-human-to-video 
       </div>
 
       <div class="description">
-        Subject-to-video generation using a single reference image. <em><strong>Phantom</strong></em> can maintain the integrity of various types of subjects, including objects, clothing, animals, virtual characters, and more.
+        Given multiple reference images, <strong>BindWeave</strong> creates prompt-driven multi-person videos that preserve each subject’s identity and cleanly depict their interactions, with smooth temporal consistency and no identity swaps.
       </div>
 
       <div class="flex flex-dynamic">
@@ -736,83 +779,107 @@
                   <div class="loading-text">Loading...</div>
                   <div class="loading-icon">&#9749</div>
               </div>
-              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/single_ip/0.mov"></video>
-              <div class="prompt">The man puts on the sneakers and starts jogging along the riverbank.</div>
+              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/multiface_1.mp4"></video>
+              <div class="prompt">The video depicts an indoor scene where two individuals are engaged in a conversation. The setting appears to be a well-lit room with natural light streaming through large windows. The room is furnished with a wheelchair positioned near the back, suggesting it might be a medical or care facility. A desk with a laptop and some other items is visible on the right side of the frame. The person on the left, dressed in a gray uniform, is holding a tablet and gesturing with her hands while speaking. Her posture indicates she is explaining something, possibly related to the tablet's content. The individual on the right, wearing a light-colored robe, is seated and listening attentively, smiling slightly, which suggests a positive interaction. The camera remains static throughout the sequence, focusing on capturing the interaction between the two individuals. There is no noticeable camera movement such as panning or zooming. The overall atmosphere seems calm and professional, with the focus on the exchange between the two people.</div>
           </div>
           <div class="prompt-wrap full-screen-wrap" style="position: relative;">
             <div class="loading-placeholder">
                 <div class="loading-text">Loading...</div>
                 <div class="loading-icon">&#9749</div>
             </div>
-            <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/single_ip/3.mov"></video>
-            <div class="prompt">A woman in a snow leopard print coat stood in the middle of the ice, looking around, her long hair fluttering in the wind.</div>
-          </div>
-          <div class="prompt-wrap full-screen-wrap" style="position: relative;">
-            <div class="loading-placeholder">
-                <div class="loading-text">Loading...</div>
-                <div class="loading-icon">&#9749</div>
-            </div>
-            <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/single_ip/8.mov"></video>
-            <div class="prompt">This bottle of perfume is placed on the beach by the sea, and the waves gently hit it.</div>
+            <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/multiface_4.mp4"></video>
+            <div class="prompt">The video captures a lively scene featuring three women dressed in glamorous, sequined outfits, celebrating with gifts. They stand against a backdrop of twinkling fairy lights, creating a festive atmosphere. Each woman holds a wrapped gift box, which they occasionally toss into the air, adding to the celebratory mood. Their movements are energetic; they dance and jump, their hair bouncing with each step. The camera remains static throughout, focusing on capturing the joyful expressions and interactions among the women. The overall setting suggests a party or holiday celebration, with the bright lights and festive attire enhancing the cheerful ambiance.</div>
           </div>
           <div class="prompt-wrap full-screen-wrap" style="position: relative;">
               <div class="loading-placeholder">
                   <div class="loading-text">Loading...</div>
                   <div class="loading-icon">&#9749</div>
               </div>
-              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/single_ip/1.mov"></video>
-              <div class="prompt">The little white dog is bouncing and running from a distance, with the living room in the background, blinking its eyes and smiling at the camera.</div>
+              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/multiface_5.mp4"></video>
+              <div class="prompt">The video captures two individuals taking a selfie together in an indoor setting. The man is holding a smartphone with his right hand extended forward, capturing the photo. He is dressed in a light gray blazer over a white shirt. The woman beside him has long blonde hair and is wearing a white top. Both are smiling broadly, appearing cheerful and engaged in the moment. The background suggests they are in a modern office or a similar professional environment, with a mix of neutral tones and greenery visible behind them. The lighting is bright and even, likely from overhead fluorescent lights, which illuminates the scene clearly without harsh shadows. As the video progresses, there is minimal change in the positioning of the subjects. They maintain their close proximity and continue to smile at the camera. The man's arm remains steady, holding the phone at arm's length, while the woman slightly adjusts her position to ensure she is within the frame. The overall atmosphere conveys a sense of camaraderie and lightheartedness. The camera remains static throughout the sequence, focusing on the two individuals as they pose for the selfie. There is no noticeable panning, tilting, or zooming, keeping the framing consistent and centered on the subjects. The video captures a candid and joyful moment shared between the two individuals.</div>
           </div>
           <div class="prompt-wrap full-screen-wrap" style="position: relative;">
               <div class="loading-placeholder">
                   <div class="loading-text">Loading...</div>
                   <div class="loading-icon">&#9749</div>
               </div>
-              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/single_ip/2.mov"></video>
-              <div class="prompt">The rabbit bounces on the soft mattress and falls from the bed to the wooden floor.</div>
+              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/multiface_6.mp4"></video>
+              <div class="prompt">The video features two individuals, a man and a woman, dancing against a bright yellow background. Both are dressed casually; the man wears a red and black plaid shirt over a white t-shirt, while the woman is in a green button-up shirt layered over a white top. They appear to be enjoying themselves, smiling and laughing throughout the sequence. Initially, they stand side by side, facing forward. The man starts by moving his arms in a rhythmic fashion, clapping and gesturing as if he's leading the dance. The woman mirrors his movements, clapping her hands and swaying slightly. As the sequence progresses, both individuals become more animated, raising their arms and moving their bodies energetically. Their facial expressions convey joy and enthusiasm, suggesting they are thoroughly engaged in the activity. The camera remains static throughout the video, focusing on capturing the full-body movements of the dancers without any noticeable panning or zooming. The consistent yellow backdrop provides a vibrant contrast to their clothing and enhances the lively atmosphere of the scene. The overall impression is one of fun and camaraderie, with the dancers fully immersed in their playful routine.  </div>
           </div>
           <div class="prompt-wrap full-screen-wrap" style="position: relative;">
             <div class="loading-placeholder">
                 <div class="loading-text">Loading...</div>
                 <div class="loading-icon">&#9749</div>
             </div>
-            <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/single_ip/6.mov"></video>
-            <div class="prompt">The character is fishing by the river.</div>
+            <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/multiface_8.mp4"></video>
+            <div class="prompt">The video captures a cozy indoor scene featuring a couple sitting closely on a beige couch. The woman is holding a tablet and appears engaged with its content, smiling warmly. The man, seated beside her, leans in affectionately, his arm around her shoulders, and gestures towards the tablet screen, possibly discussing something amusing or interesting. Both individuals exhibit relaxed and happy expressions. The background reveals a simple, modern living room setting with neutral tones. A white vase and a black decorative object sit on a shelf behind them, adding subtle decor elements to the space. The lighting is soft and natural, suggesting daytime. The overall atmosphere is warm and intimate, highlighting a moment of shared enjoyment and connection between the two individuals.</div>
+          </div>
+          <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+            <div class="loading-placeholder">
+                <div class="loading-text">Loading...</div>
+                <div class="loading-icon">&#9749</div>
+            </div>
+            <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/multiface_11.mp4"></video>
+            <div class="prompt">The video depicts two individuals sitting closely on a beige couch covered with a matching beige slipcover. The man is seated on the left side, wearing a maroon t-shirt and blue jeans, while the woman sits beside him, dressed in a purple plaid shirt and dark blue jeans. She has her arm around his shoulder, suggesting a friendly or intimate relationship. The man is focused on a silver laptop placed on his lap, occasionally moving his hands to interact with it. The woman leans in towards the laptop, pointing at the screen with her right hand, indicating she might be explaining something or showing him something specific. Her facial expression suggests engagement and interest. The background shows large windows with a view of a cityscape, indicating an urban setting. The lighting is bright, suggesting daytime with clear weather outside. The overall atmosphere appears casual and relaxed, with the two individuals comfortably interacting with each other and the laptop. There is no significant camera movement; the shot remains static throughout the sequence, focusing on capturing the interaction between the two individuals and their shared activity on the laptop.</div>
           </div>
           <div class="prompt-wrap full-screen-wrap" style="position: relative;">
               <div class="loading-placeholder">
                   <div class="loading-text">Loading...</div>
                   <div class="loading-icon">&#9749</div>
               </div>
-              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/single_ip/4.mov"></video>
-              <div class="prompt">On the brightly lit animated stage, a woman is standing in front of a microphone, singing passionately.</div>
+              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/multihuman_5.mp4"></video>
+              <div class="prompt">The video captures two individuals engaged in cross-country skiing on a snowy landscape during what appears to be late afternoon or early evening, judging by the warm, golden light of the setting sun. The background is a dense forest of bare trees, suggesting it's winter. The person on the left is dressed in a bright yellow jacket with black pants and a hood, while the individual on the right wears a teal-colored ski suit with a matching hat. Both are equipped with ski poles and appear to be gliding smoothly across the snow. Their body language suggests they are enjoying the activity, with relaxed postures and occasional smiles directed at each other, indicating a friendly interaction. The camera remains static throughout the sequence, focusing on the two skiers as they move forward. There is no significant change in the camera angle or position, maintaining a consistent view of the skiers against the backdrop of the forest and the soft glow of the sunset. The snow-covered ground and the trees in the background remain constant, emphasizing the serene and peaceful environment. The skiers' movement is steady and continuous, with their arms swinging rhythmically as they propel themselves forward.</div>
           </div>
           <div class="prompt-wrap full-screen-wrap" style="position: relative;">
             <div class="loading-placeholder">
                 <div class="loading-text">Loading...</div>
                 <div class="loading-icon">&#9749</div>
             </div>
-            <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/single_ip/7.mov"></video>
-            <div class="prompt">A burly man walks around a glittering Christmas tree, which is covered with colorful decorations and twinkling lights. The man has a kind smile on his face and looks around, with a black belt hanging around his waist.</div>
+            <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/multihuman_6.mp4"></video>
+            <div class="prompt">The video captures a scene set indoors, likely in an art studio or classroom, where two individuals are engaged in a creative activity. The primary focus is on a man seated at an easel, actively painting on a canvas. He is wearing a white shirt and a dark apron splattered with paint, indicating his involvement in the artistic process. His posture suggests concentration as he works on his artwork. A woman stands beside him, leaning slightly forward with her arms around his shoulders. She is dressed in a denim jacket and a patterned dress, her hands resting gently on his shoulders and occasionally gesturing towards the canvas. Her body language conveys a sense of encouragement and support as she interacts with the artist. The background reveals shelves filled with various art supplies, including jars and containers, suggesting a well-equipped workspace. A partially visible painting on the wall adds to the artistic ambiance of the setting. The lighting appears bright and even, illuminating the scene without harsh shadows, which enhances the clarity of the environment. Throughout the video, there is minimal movement from both individuals. The woman remains mostly stationary, her gestures directed towards the canvas, while the man continues his painting. The camera maintains a steady, static shot focused on capturing the interaction between the two figures and their shared artistic endeavor. There are no significant changes in the positioning or actions of the subjects, and the overall atmosphere is one of calm collaboration and creativity.</div>
           </div>
           <div class="prompt-wrap full-screen-wrap" style="position: relative;">
             <div class="loading-placeholder">
                 <div class="loading-text">Loading...</div>
                 <div class="loading-icon">&#9749</div>
             </div>
-            <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/single_ip/5.mov"></video>
-            <div class="prompt">The woman is walking by the seaside in a bikini, then confidently turns around to show the details of the outfit.</div>
+            <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/multihuman_11.mp4"></video>
+            <div class="prompt">The video opens with a serene outdoor setting in a forest, featuring a green tent and two individuals seated on a log. The scene is set during the daytime, with clear weather and sunlight filtering through the trees. The individuals are dressed casually, with one person wearing a white tank top and patterned shorts, and the other in a plaid shirt and dark pants. They appear to be engaged in a relaxed conversation, with the person in the plaid shirt leaning forward and the other sitting back, holding a stick. The background remains consistent, with the green tent and tall trees providing a tranquil atmosphere. The individuals continue their conversation, occasionally gesturing with their hands. The scene remains static, with no significant changes in the environment or their positions. The video concludes with the same peaceful outdoor setting, maintaining the calm and relaxed ambiance throughout.</div>
+          </div>
+           <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+            <div class="loading-placeholder">
+                <div class="loading-text">Loading...</div>
+                <div class="loading-icon">&#9749</div>
+            </div>
+            <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/multihuman_1.mp4"></video>
+            <div class="prompt">The video depicts an elderly couple sitting on a light gray sofa in a well-lit living room. The man, dressed in a light blue shirt and brown pants, is holding a laptop on his lap, while the woman, wearing a checkered blouse and beige shorts, leans in closely, resting her arm on his shoulder. Both individuals appear engaged with the laptop screen, occasionally gesturing towards it with their hands. As the video progresses, the couple's expressions change from focused to surprised and then to joyful. The man raises his hand in a gesture of excitement, while the woman laughs heartily, her head tilted back slightly. Their body language suggests a shared moment of amusement or discovery. The background reveals a modern living room with a bookshelf filled with books and decorative items, a small table with a lamp, and a window letting in natural light. The overall atmosphere is cozy and domestic, emphasizing a relaxed and intimate setting. There is no noticeable camera movement; the shot remains static throughout the sequence, capturing the couple's interaction with the laptop and their reactions.</div>
+          </div>
+           <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+            <div class="loading-placeholder">
+                <div class="loading-text">Loading...</div>
+                <div class="loading-icon">&#9749</div>
+            </div>
+            <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/multiface_13.mp4"></video>
+            <div class="prompt">The video captures a serene and static scene of two individuals seated on a couch in a cozy living room setting. The person on the left is holding a blue bottle, possibly a beverage, while the individual on the right is holding a white bowl, which could contain snacks. They are both dressed casually, with the person on the left wearing a light-colored top and the one on the right in a red and black checkered shirt. The room is warmly lit by a floor lamp to their left, casting a soft glow that enhances the intimate atmosphere. The walls are painted a dark blue, contrasting with the lighter tones of the furniture and the individuals' clothing. An open doorway in the background leads to another room, suggesting a home environment. Throughout the video, there is no noticeable change in the positions or actions of the individuals, nor any significant movement or alteration in the camera's perspective. The scene remains consistent, emphasizing a moment of quiet companionship and relaxation.</div>
+          </div>
+           <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+            <div class="loading-placeholder">
+                <div class="loading-text">Loading...</div>
+                <div class="loading-icon">&#9749</div>
+            </div>
+            <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/multihuman_10.mp4"></video>
+            <div class="prompt">The video depicts an emotional scene set outdoors, likely in a park or wooded area, given the blurred greenery and trees in the background. The lighting suggests it is daytime, possibly overcast due to the soft shadows. A man and a woman are the central figures. The man, wearing a light blue denim shirt, has his arm around the woman's shoulder, offering comfort. The woman, dressed in a brown leather jacket, appears distressed, covering her face with her hands at one point. Her posture and facial expression suggest she might be crying or overwhelmed by emotion. The man leans in closer to the woman, maintaining physical contact, which indicates he is trying to console her. His body language shows concern and support. The woman's movements are minimal, primarily involving her hands covering her face and then pulling them away slightly. The camera remains static throughout the sequence, focusing on capturing the interaction between the two individuals without any noticeable panning or zooming. The framing centers on their upper bodies, emphasizing their facial expressions and gestures. The overall mood conveyed is one of empathy and emotional support within a natural outdoor setting.</div>
           </div>
       </div>
   </section>
 
     <section id="multi_ip">
         <div class="title" style="font-family: 'Alegreya'; font-size: 1.6em;">
-            Multi-Reference Subject-to-Video Generation
+            Human-entity-to-video
         </div>
 
         <div class="description">
-            Subject-to-video generation using multiple reference images. <em><strong>Phantom</strong></em> can achieve realistic interactions between multiple subjects, such as group interactions, product demonstrations, virtual try-on, and more.
+            Given multiple reference images of people and objects, <strong>BindWeave</strong> can maintain per‑subject and per‑entity identity consistency, achieve prompt‑accurate and physically plausible human–object interactions, and deliver smooth temporal coherence under occlusions and view changes.
         </div>
 
         <div class="flex flex-dynamic">
@@ -822,100 +889,150 @@
                     <div class="loading-text">Loading...</div>
                     <div class="loading-icon">&#9749</div>
                 </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/multi_ip/8.mov"></video>
-                <div class="prompt">A character wearing an outfit in a location turning around and posing to the camera.</div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/faceobj_1.mp4"></video>
+                <div class="prompt">A man playing with his dog in front of the house.</div>
             </div>
             <div class="prompt-wrap full-screen-wrap" style="position: relative;">
                 <div class="loading-placeholder">
                     <div class="loading-text">Loading...</div>
                     <div class="loading-icon">&#9749</div>
                 </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/multi_ip/5.mov"></video>
-                <div class="prompt">A woman strolls in the park wearing a dress, with a large area of beautiful flowers in the background.</div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/faceobj_6.mp4"></video>
+                <div class="prompt">A man is playing with an American football on the beach.</div>
             </div>
             <div class="prompt-wrap full-screen-wrap" style="position: relative;">
                 <div class="loading-placeholder">
                     <div class="loading-text">Loading...</div>
                     <div class="loading-icon">&#9749</div>
                 </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/multi_ip/9.mov"></video>
-                <div class="prompt">A woman wearing a green bikini strolls by the river and then poses for a photo.</div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/faceobj_11.mp4"></video>
+                <div class="prompt">A woman reads a book on a bridge.</div>
             </div>
             <div class="prompt-wrap full-screen-wrap" style="position: relative;">
                 <div class="loading-placeholder">
                     <div class="loading-text">Loading...</div>
                     <div class="loading-icon">&#9749</div>
                 </div>
-                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/multi_ip/2.mov"></video>
-                <div class="prompt">The man raised his camera to take pictures on the mountaintop, and the lens moved from near to far, showing the beautiful scenery in front of the man.</div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/humanobj_8.mp4"></video>
+                <div class="prompt">A man sitting in the office, a cat sitting beside him.</div>
             </div>
             <div class="prompt-wrap full-screen-wrap" style="position: relative;">
               <div class="loading-placeholder">
                   <div class="loading-text">Loading...</div>
                   <div class="loading-icon">&#9749</div>
               </div>
-              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/multi_ip/1.mov"></video>
-              <div class="prompt">A fashionable woman stared at a blue bag in the store, then picked it up and observed it carefully.</div>
+              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/humanobj_12.mp4"></video>
+              <div class="prompt">A man sitting in the park, a cat walking around his feet.</div>
             </div>
             <div class="prompt-wrap full-screen-wrap" style="position: relative;">
               <div class="loading-placeholder">
                   <div class="loading-text">Loading...</div>
                   <div class="loading-icon">&#9749</div>
               </div>
-              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/multi_ip/10.mov"></video>
-              <div class="prompt">He held the doll against his chest and raised it above his head. Suddenly, the doll exploded, and the pieces were scattered everywhere.</div>
+              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/faceobj_13.mp4"></video>
+              <div class="prompt">A woman stands on the bridge, wearing a black one-piece swimsuit with the Nike Air logo across the front. The swimsuit fits snugly, and she poses confidently against the backdrop of the bridge, her arms relaxed by her sides.</div>
+            </div>
+            <!-- <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+              <div class="loading-placeholder">
+                  <div class="loading-text">Loading...</div>
+                  <div class="loading-icon">&#9749</div>
+              </div>
+              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/magref_video/id_obj_env/faceobj_1.mp4"></video>
+              <div class="prompt">A man playing with his dog in front of the house.</div>
+            </div>
+            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+              <div class="loading-placeholder"> -->
+                  <!-- <div class="loading-text">Loading...</div>
+                  <div class="loading-icon">&#9749</div>
+              </div>
+              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/magref_video/id_obj_env/faceobj_13.mp4"></video>
+              <div class="prompt">A woman stands on the bridge, wearing a black one-piece swimsuit with the Nike Air logo across the front. The swimsuit fits snugly, and she poses confidently against the backdrop of the bridge, her arms relaxed by her sides.</div>
             </div>
             <div class="prompt-wrap full-screen-wrap" style="position: relative;">
               <div class="loading-placeholder">
                   <div class="loading-text">Loading...</div>
                   <div class="loading-icon">&#9749</div>
               </div>
-              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/multi_ip/7.mov"></video>
-              <div class="prompt">The two of them were flipping through books in the study.</div>
-            </div>
-            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
-              <div class="loading-placeholder">
-                  <div class="loading-text">Loading...</div>
-                  <div class="loading-icon">&#9749</div>
-              </div>
-              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/multi_ip/0.mov"></video>
-              <div class="prompt">They sat in front of the easel in the studio and painted, with the camera getting closer and closer.</div>
-            </div>
-            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
-              <div class="loading-placeholder">
-                  <div class="loading-text">Loading...</div>
-                  <div class="loading-icon">&#9749</div>
-              </div>
-              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/videos/multi_ip/4.mov"></video>
-              <div class="prompt">They were fiercely discussing the solution to a math problem in front of the blackboard, pointing and pointing at the blackboard.</div>
-            </div>
+              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/magref_video/id_obj_env/faceobj_14.mp4"></video>
+              <div class="prompt">A woman stands in front of a shop, wearing a simple black oversized t-shirt with a small logo on the chest. The t-shirt is paired with casual attire, and she stands confidently, holding nothing in her hands as she gazes around the scene.</div>
+            </div> -->
         </div>
     </section>
+
+
+
+
+<!-- 
+        <section id="multi_ip">
+        <div class="title" style="font-family: 'Alegreya'; font-size: 1.6em;">
+            Multi-entity-to-video
+        </div>
+
+        <div class="description">
+            Given multiple reference images of objects, <strong>BindWeave</strong> composes a prompt guided video that preserves the specific identity of each entity, including shape, texture, color, and branding. The model renders plausible motion, interactions, and spatial arrangement while maintaining temporal coherence and consistent appearance.
+        </div>
+
+        <div class="flex flex-dynamic">
+
+            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                <div class="loading-placeholder">
+                    <div class="loading-text">Loading...</div>
+                    <div class="loading-icon">&#9749</div>
+                </div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/faceobj_1.mp4"></video>
+                <div class="prompt">A man playing with his dog in front of the house.</div>
+            </div>
+            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                <div class="loading-placeholder">
+                    <div class="loading-text">Loading...</div>
+                    <div class="loading-icon">&#9749</div>
+                </div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/faceobj_6.mp4"></video>
+                <div class="prompt">A man is playing with an American football on the beach.</div>
+            </div>
+            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                <div class="loading-placeholder">
+                    <div class="loading-text">Loading...</div>
+                    <div class="loading-icon">&#9749</div>
+                </div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/faceobj_11.mp4"></video>
+                <div class="prompt">A woman reads a book on a bridge.</div>
+            </div>
+            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+                <div class="loading-placeholder">
+                    <div class="loading-text">Loading...</div>
+                    <div class="loading-icon">&#9749</div>
+                </div>
+                <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/humanobj_8.mp4"></video>
+                <div class="prompt">A man sitting in the office, a cat sitting beside him.</div>
+            </div>
+            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+              <div class="loading-placeholder">
+                  <div class="loading-text">Loading...</div>
+                  <div class="loading-icon">&#9749</div>
+              </div>
+              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/humanobj_12.mp4"></video>
+              <div class="prompt">A man sitting in the park, a cat walking around his feet.</div>
+            </div>
+            <div class="prompt-wrap full-screen-wrap" style="position: relative;">
+              <div class="loading-placeholder">
+                  <div class="loading-text">Loading...</div>
+                  <div class="loading-icon">&#9749</div>
+              </div>
+              <video autoplay playsinline muted loop onloadeddata="this.style.display='block'; this.previousElementSibling.style.display='none';" src="./assets/bindweave_video/faceobj_13.mp4"></video>
+              <div class="prompt">A woman stands on the bridge, wearing a black one-piece swimsuit with the Nike Air logo across the front. The swimsuit fits snugly, and she poses confidently against the backdrop of the bridge, her arms relaxed by her sides.</div>
+            </div>
+        </div>
+    </section> -->
+
+
+
 
     <section class="ethics-section">
         <h3>Ethics Concerns</h3>
         <p>
-            The images used in these demos are sourced from public domains or generated by models, and are intended solely to showcase the capabilities of this research. If you have any concerns, please contact us at tianxiang.ma@bytedance.com, and we will promptly remove them.
+            This work studies subject-to-video generation and related evaluation. All images appearing in this paper are either generated by our models or sourced from publicly available datasets under their respective licenses and are used solely to demonstrate the technical capabilities of our research. All qualitative (visualized) results are provided solely for research discussion and are not intended for commercial use. If you believe any content infringes upon rights or raises ethical concerns, please contact us. We will address the issue and remove the material promptly.
         </p>
-    </section>
-
-
-    <section class="acknowledgements-section">
-        <h3>Acknowledgements</h3>
-        <p>
-            We would like to express our gratitude to the SEED team for their support. Special thanks to Lu Jiang, Haoyuan Guo, Zhibei Ma, and Sen Wang for their assistance with the model and data. We are also very grateful to Siying Chen, Qingyang Li, and Wei Han for their help with the evaluation. Additionally, we would like to give thanks to Seaweed-APT for providing the website template.
-        </p>
-    </section>
-
-
-    <section class="bibtex-section">
-        <h3>BibTeX</h3>
-        <pre class="bibtex-code">@article{liu2025phantom,
-          title={Phantom: Subject-Consistent Video Generation via Cross-Modal Alignment},
-          author={Liu, Lijie and Ma, Tianxaing and Li, Bingchuan and Chen, Zhuowei and Liu, Jiawei and He, Qian and Wu, Xinglong},
-          journal={arXiv preprint arXiv:2502.11079},
-          year={2025}
-        }</pre>
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -970,5 +1087,33 @@
         });
     </script>
 
+
+<!-- ================= BibTeX Section with Copy Button ================= -->
+    <div class="container">
+<h2 class="title is-3 force-center-text">BibTeX</h2>
+
+        <div class="bibtex-container">
+            <button id="copy-bibtex-btn" class="copy-btn">Copy</button>
+            <div class="bibtex-box">
+                <pre><code id="bibtex-code">@article{li2025bindweave,
+  title={BindWeave: Subject-Consistent Video Generation via Cross-Modal Integration},
+  author={Li, Zhaoyang and Qian, Dongjun and Su, Kai and Diao, Qishuai and Xia, Xiangyang and Liu, Chang and Yang, Wenfei and Zhang, Tianzhu and Yuan, Zehuan},
+  journal={arXiv preprint arXiv:2510.00438},
+  year={2025}
+}</code></pre>
+            </div>
+        </div>
+    </div>
+<!-- ================================================================= -->
+
+<script src="./assets/index.js"></script>
 </body>
+
+
+
+
+
+
+
+
 </html>
